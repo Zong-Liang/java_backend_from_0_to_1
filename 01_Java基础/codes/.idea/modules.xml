@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/code_01/code_01.iml" filepath="$PROJECT_DIR$/code_01/code_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_02/code_02.iml" filepath="$PROJECT_DIR$/code_02/code_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_03/code_03.iml" filepath="$PROJECT_DIR$/code_03/code_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_04/code_04.iml" filepath="$PROJECT_DIR$/code_04/code_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_05/code_05.iml" filepath="$PROJECT_DIR$/code_05/code_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_06/code_06.iml" filepath="$PROJECT_DIR$/code_06/code_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_07/code_07.iml" filepath="$PROJECT_DIR$/code_07/code_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_08/code_08.iml" filepath="$PROJECT_DIR$/code_08/code_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_09/code_09.iml" filepath="$PROJECT_DIR$/code_09/code_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_10/code_10.iml" filepath="$PROJECT_DIR$/code_10/code_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_11/code_11.iml" filepath="$PROJECT_DIR$/code_11/code_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_12/code_12.iml" filepath="$PROJECT_DIR$/code_12/code_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_13/code_13.iml" filepath="$PROJECT_DIR$/code_13/code_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_14/code_14.iml" filepath="$PROJECT_DIR$/code_14/code_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_15/code_15.iml" filepath="$PROJECT_DIR$/code_15/code_15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_16/code_16.iml" filepath="$PROJECT_DIR$/code_16/code_16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_17/code_17.iml" filepath="$PROJECT_DIR$/code_17/code_17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/codes.iml" filepath="$PROJECT_DIR$/.idea/codes.iml" />
+    </modules>
+  </component>
+</project>
