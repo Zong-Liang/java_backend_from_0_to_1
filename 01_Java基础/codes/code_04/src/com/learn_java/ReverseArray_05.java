@@ -6,7 +6,7 @@ public class ReverseArray_05 {
 
         //遍历
         for (int j : arr) {
-            System.out.print(j + "\t");
+            System.out.print(j + " ");
         }
 
         //逆置
