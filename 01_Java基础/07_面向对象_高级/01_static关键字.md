@@ -4,6 +4,8 @@
 
 这里的类变量、类方法、只需要使用`static`修饰即可，也称为静态变量、静态方法。
 
+`static`修饰的方法内，不能使用`this`和`super`。
+
 ```java
 public class Chinese {
     String name;
