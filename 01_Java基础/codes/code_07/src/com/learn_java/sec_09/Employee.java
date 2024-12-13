@@ -1,5 +1,6 @@
 package com.learn_java.sec_09;
 
+@UseAnnotation("类")
 public class Employee {
     private String name;
     private int age;
