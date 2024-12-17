@@ -1,5 +1,6 @@
 package com.learn_java.sec_01;
 
+//创建一个子类继承Thread类
 public class PrintEvenNumber extends Thread{
     // 重写Thread类的run()方法
     @Override
