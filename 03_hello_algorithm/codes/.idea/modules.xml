@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/chapter_array_and_linkedlist/chapter_array_and_linkedlist.iml" filepath="$PROJECT_DIR$/chapter_array_and_linkedlist/chapter_array_and_linkedlist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_backtracking/chapter_backtracking.iml" filepath="$PROJECT_DIR$/chapter_backtracking/chapter_backtracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_computational_complexity/chapter_computational_complexity.iml" filepath="$PROJECT_DIR$/chapter_computational_complexity/chapter_computational_complexity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_divide_and_conquer/chapter_divide_and_conquer.iml" filepath="$PROJECT_DIR$/chapter_divide_and_conquer/chapter_divide_and_conquer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_dynamic_programming/chapter_dynamic_programming.iml" filepath="$PROJECT_DIR$/chapter_dynamic_programming/chapter_dynamic_programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_graph/chapter_graph.iml" filepath="$PROJECT_DIR$/chapter_graph/chapter_graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_greedy/chapter_greedy.iml" filepath="$PROJECT_DIR$/chapter_greedy/chapter_greedy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_hashing/chapter_hashing.iml" filepath="$PROJECT_DIR$/chapter_hashing/chapter_hashing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_heap/chapter_heap.iml" filepath="$PROJECT_DIR$/chapter_heap/chapter_heap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_searching/chapter_searching.iml" filepath="$PROJECT_DIR$/chapter_searching/chapter_searching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_sorting/chapter_sorting.iml" filepath="$PROJECT_DIR$/chapter_sorting/chapter_sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_stack_and_queue/chapter_stack_and_queue.iml" filepath="$PROJECT_DIR$/chapter_stack_and_queue/chapter_stack_and_queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_tree/chapter_tree.iml" filepath="$PROJECT_DIR$/chapter_tree/chapter_tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/codes.iml" filepath="$PROJECT_DIR$/.idea/codes.iml" />
+    </modules>
+  </component>
+</project>
