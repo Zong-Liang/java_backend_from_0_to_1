@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebc26ed2-df1f-4eb6-b6d4-77974c673909" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89520e4e-c1e0-40f7-9e74-cea60f04006c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89520e4e-c1e0-40f7-9e74-cea60f04006c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/controller/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/mapper/DeptMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/service/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/service/DeptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/itheima/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/TliasWebManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/controller/DeptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/mapper/DeptMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Dept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/DeptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/impl/DeptServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/surefire-reports/2025-03-03T18-15-56_365.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/surefire-reports/TEST-com.itheima.TliasWebManagementApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/surefire-reports/TEST-com.itheima.TliasWebManagementApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/surefire-reports/com.itheima.TliasWebManagementApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/surefire-reports/com.itheima.TliasWebManagementApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/itheima/TliasWebManagementApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,37 +52,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Maven.tlias-web-management [clean].executor": "Run",
-    "Maven.tlias-web-management [compile].executor": "Run",
-    "Maven.tlias-web-management [test].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.TliasWebManagementApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Desktop/java_backend_from_0_to_1/05_Web/codes/tlias-web-management/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.36481243",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.tlias-web-management [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tlias-web-management [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tlias-web-management [test].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TliasWebManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/java_backend_from_0_to_1/05_Web/codes/tlias-web-management/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36481243&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Desktop\java_backend_from_0_to_1\05_Web\codes\tlias-web-management\src\main\resources" />
@@ -102,7 +115,13 @@
       <option name="presentableId" value="Default" />
       <updated>1740975916028</updated>
       <workItem from="1740975918494" duration="6162000" />
-      <workItem from="1740983318244" duration="10102000" />
+      <workItem from="1740983318244" duration="14582000" />
+      <workItem from="1741010293751" duration="407000" />
+      <workItem from="1741010732967" duration="224000" />
+      <workItem from="1741010994913" duration="2636000" />
+      <workItem from="1741014381034" duration="685000" />
+      <workItem from="1741015072335" duration="155000" />
+      <workItem from="1741015257534" duration="477000" />
     </task>
     <servers />
   </component>
