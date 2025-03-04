@@ -3,7 +3,9 @@ package com.itheima.mapper;
 import com.github.pagehelper.Page;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpQueryParam;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -32,4 +34,9 @@ public interface EmpMapper {
 //    public List<Emp> list();
 
     List<Emp> list(EmpQueryParam empQueryParam);
+
+    @Options(useGeneratedKeys = true, keyProperty = "id") //获取到生成的主键
+    @Insert("insert into emp(username, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time)" +
+            "values(#{username}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image}, #{entryDate}, #{deptId}, #{createTime}, #{updateTime})")
+    void insert(Emp emp);
 }
