@@ -1,4 +1,4 @@
-package com.itheima.service.impl;
+package com.itheima.service.Impl;
 
 import com.itheima.mapper.DeptMapper;
 import com.itheima.pojo.Dept;
@@ -14,6 +14,7 @@ public class DeptServiceImpl implements DeptService {
     @Autowired
     private DeptMapper deptMapper;
 
+
     @Override
     public List<Dept> findAll() {
         return deptMapper.findAll();
@@ -22,6 +23,7 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public void deleteById(Integer id) {
         deptMapper.deleteById(id);
+
     }
 
     @Override
@@ -29,6 +31,7 @@ public class DeptServiceImpl implements DeptService {
         //补全基础属性
         dept.setCreateTime(LocalDateTime.now());
         dept.setUpdateTime(LocalDateTime.now());
+
         deptMapper.add(dept);
     }
 
