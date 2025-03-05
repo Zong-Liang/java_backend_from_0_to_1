@@ -6,9 +6,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * 分页结果封装类
+ */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class PageResult<T> {
     private Long total;
     private List<T> rows;
