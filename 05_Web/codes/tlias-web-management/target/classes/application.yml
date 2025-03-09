@@ -1,7 +1,7 @@
 spring:
   application:
     name: tlias-web-management
-  #é…ç½®æ•°æ®åº“çš„è¿æ¥ä¿¡æ¯
+  #ÅäÖÃÊı¾İ¿âµÄÁ¬½ÓĞÅÏ¢
   datasource:
     url: jdbc:mysql://localhost:3306/tlias
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -9,25 +9,25 @@ spring:
     password: 1234
   servlet:
     multipart:
-      #æœ€å¤§å•ä¸ªæ–‡ä»¶å¤§å°
+      #×î´óµ¥¸öÎÄ¼ş´óĞ¡
       max-file-size: 10MB
-      #æœ€å¤§è¯·æ±‚å¤§å°(åŒ…æ‹¬æ‰€æœ‰æ–‡ä»¶å’Œè¡¨å•æ•°æ®)
+      #×î´óÇëÇó´óĞ¡(°üÀ¨ËùÓĞÎÄ¼şºÍ±íµ¥Êı¾İ)
       max-request-size: 100MB
 
-#Mybatisçš„ç›¸å…³é…ç½®
+#MybatisµÄÏà¹ØÅäÖÃ
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    #å¼€å¯é©¼å³°å‘½åæ˜ å°„å¼€å…³
+    #¿ªÆôÍÕ·åÃüÃûÓ³Éä¿ª¹Ø
     map-underscore-to-camel-case: true
 
-#é…ç½®äº‹åŠ¡ç®¡ç†æ—¥å¿—çº§åˆ«
+#ÅäÖÃÊÂÎñ¹ÜÀíÈÕÖ¾¼¶±ğ
 logging:
   level:
     org.springframework.jdbc.support.JdbcTransactionManager: debug
 
 
-#é˜¿é‡Œäº‘OSS
+#°¢ÀïÔÆOSS
 aliyun:
   oss:
     endpoint: https://oss-cn-beijing.aliyuncs.com
