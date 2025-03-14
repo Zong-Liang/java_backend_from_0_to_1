@@ -81,7 +81,6 @@ public class UseSet {
     @Test
     public void test5() {
         var comparator = new Comparator() {
-
             @Override
             public int compare(Object o1, Object o2) {
                 if (o1 instanceof User && o2 instanceof User) {
