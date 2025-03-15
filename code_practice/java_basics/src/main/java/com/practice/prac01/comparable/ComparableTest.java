@@ -1,5 +1,6 @@
-package com.practice.prac01;
+package com.practice.prac01.comparable;
 
+import com.practice.prac01.Person;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
