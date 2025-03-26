@@ -26,28 +26,40 @@
 
 ## 解题思路：
 
+**定义两个指针：**
+
+- `nonZeroIndex`：指向下一个非零元素应该放置的位置。
+- 遍历数组的指针 i：用于扫描整个数组。
+
+**第一次遍历：将非零元素移动到前面**
+
+- 遍历数组 `nums`，当遇到非零元素时，将其放到 `nonZeroIndex` 位置，并将 `nonZeroIndex` 向后移动一位。
+- 这样，`nonZeroIndex` 之前的元素都是非零元素，且保持了相对顺序。
+
+**第二次操作：将剩余位置填 0**
+
+- 在第一次遍历结束后，`nonZeroIndex` 指向最后一个非零元素之后的位置。
+- 从 `nonZeroIndex` 到数组末尾，将所有元素置为 0。
+
 ## Java代码：
 
 ```java
 public class Solution {
     public void moveZeroes(int[] nums) {
-        if (nums == null || nums.length <= 1) {
-            return;
-        }
+        // 定义非零元素应该放置的位置
+        int nonZeroIndex = 0;
         
-        // slow指针指向下一个非零元素应该放置的位置
-        int slow = 0;
-        
-        // 第一次遍历：将所有非零元素移到前面
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != 0) {
-                nums[slow++] = nums[fast];
+        // 第一次遍历：将非零元素移动到前面
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[nonZeroIndex] = nums[i];
+                nonZeroIndex++;
             }
         }
         
-        // 第二次遍历：将剩余位置填充0
-        while (slow < nums.length) {
-            nums[slow++] = 0;
+        // 第二次操作：将剩余位置填 0
+        for (int i = nonZeroIndex; i < nums.length; i++) {
+            nums[i] = 0;
         }
     }
 }

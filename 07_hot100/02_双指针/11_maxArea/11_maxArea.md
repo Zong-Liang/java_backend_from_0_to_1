@@ -1,5 +1,7 @@
 # [11_盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)
 
+难度：中等
+
 ## 问题描述：
 
 给定一个长度为 `n` 的整数数组 `height` 。有 `n` 条垂线，第 `i` 条线的两个端点是 `(i, 0)` 和 `(i, height[i])` 。
@@ -29,28 +31,55 @@
 
 ## 解题思路：
 
+**初始化双指针**：
+
+- 使用两个指针 `left` 和 `right`，分别指向数组的开头和结尾，即 `left = 0`，`right = height.length - 1`。
+- 初始时，宽度最大，但高度取决于两端较短的线。
+
+**计算面积并更新最大值**：
+
+- 在每次循环中，计算当前容器面积：`area = min(height[left], height[right]) × (right - left)`。
+- 更新最大面积 `maxArea`，如果当前面积更大，则更新。
+
+**移动指针**：
+
+- 为了找到更大的面积，我们需要增加高度（因为宽度在缩小）。
+- 高度由较短的线决定，因此移动较短一侧的指针：
+  - 如果 `height[left] < height[right]`，则 `left++`。
+  - 否则，`right--`。
+- 这样可以跳过一些不可能产生更大面积的情况。
+
+**终止条件**：
+
+- 当 `left >= right` 时，停止循环。
+
 ## Java代码：
 
 ```java
 public class Solution {
     public int maxArea(int[] height) {
-        int left = 0;
-        int right = height.length - 1;
-        int maxArea = 0;
+        int maxArea = 0; // 记录最大面积
+        int left = 0; // 左指针
+        int right = height.length - 1; // 右指针
         
+        // 当左指针小于右指针时，继续循环
         while (left < right) {
-            int currentHeight = Math.min(height[left], height[right]);
-            int currentWidth = right - left;
-            int area = currentHeight * currentWidth;
+            // 计算当前面积
+            int width = right - left;
+            int h = Math.min(height[left], height[right]);
+            int area = h * width;
+            
+            // 更新最大面积
             maxArea = Math.max(maxArea, area);
             
-            // 移动较小的指针
+            // 移动较短的指针
             if (height[left] < height[right]) {
                 left++;
             } else {
                 right--;
             }
         }
+        
         return maxArea;
     }
 }

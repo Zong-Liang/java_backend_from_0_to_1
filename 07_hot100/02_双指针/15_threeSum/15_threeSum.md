@@ -39,6 +39,36 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 
 ## 解题思路：
 
+**排序**：
+
+- 首先对数组 `nums` 进行排序（升序）。
+- 排序后，重复的元素会相邻，便于去重；同时，排序后可以使用双指针来优化查找。
+
+**固定一个元素，转化为两数之和问题**：
+
+- 遍历数组，固定第一个元素 `nums[i]`。
+- 目标是找到两个元素 `nums[j]` 和 `nums[k]（j > i，k > j）`，使得 `nums[i] + nums[j] + nums[k] = 0`。
+- 即 `nums[j] + nums[k] = -nums[i]`，这就转化为一个两数之和问题。
+
+**使用双指针查找两数之和**：
+
+- 对于每个固定的 i，使用两个指针 `left = i + 1` 和 `right = nums.length - 1`。
+- 计算当前和 `sum = nums[i] + nums[left] + nums[right]`：
+  - 如果 `sum == 0`，则找到一个三元组，加入结果，并移动 `left` 和 `right`（同时去重）。
+  - 如果 `sum < 0`，说明和太小，`left` 右移以增大和。
+  - 如果 `sum > 0`，说明和太大，`right` 左移以减小和。
+
+**去重**：
+
+- 为了避免重复的三元组：
+  - 在固定 `nums[i]` 时，如果 `nums[i] == nums[i-1]`，则跳过（避免重复的 `i`）。
+  - 在找到一个三元组后，移动 `left` 和 `right` 时，跳过相同的元素。
+
+**优化**：
+
+- 如果 `nums[i] > 0`，由于数组已排序，后面的元素都大于 `0`，三数之和不可能为 `0`，可以提前退出。
+- 如果 `nums[0] + nums[1] + nums[2] > 0` 或 `nums[n-1] + nums[n-2] + nums[n-3] < 0`，可以提前判断无解。
+
 ## Java代码：
 
 ```java
@@ -49,41 +79,60 @@ import java.util.List;
 public class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
         int n = nums.length;
         
+        // 数组长度小于 3，无法形成三元组
+        if (n < 3) {
+            return result;
+        }
+        
+        // 排序
+        Arrays.sort(nums);
+        
+        // 固定第一个元素 i
         for (int i = 0; i < n - 2; i++) {
-            // 跳过重复的i
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
-            // 如果当前数大于0，后面的数都大于0，不可能和为0
+            // 如果 nums[i] > 0，后面的元素都大于 0，三数之和不可能为 0
             if (nums[i] > 0) {
                 break;
             }
+            
+            // 去重：跳过重复的 nums[i]
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            
+            // 双指针
             int left = i + 1;
             int right = n - 1;
+            
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
+                
                 if (sum == 0) {
+                    // 找到一个三元组，加入结果
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    // 跳过左指针的重复元素
+                    
+                    // 去重：跳过重复的 nums[left] 和 nums[right]
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
-                    // 跳过右指针的重复元素
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
+                    
+                    // 移动指针
                     left++;
                     right--;
                 } else if (sum < 0) {
+                    // 和太小，left 右移
                     left++;
                 } else {
+                    // 和太大，right 左移
                     right--;
                 }
             }
         }
+        
         return result;
     }
 }

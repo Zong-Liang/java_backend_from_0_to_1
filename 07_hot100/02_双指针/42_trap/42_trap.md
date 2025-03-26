@@ -25,8 +25,63 @@
 
 ## 解题思路：
 
+**理解接雨水的原理**：
+
+- 对于每个位置 `i`，它能接的雨水量由左右两侧最高柱子中的较小值决定。
+- 具体来说，位置 `i` 能接的雨水量为： `水量=min⁡(左边最高柱子,右边最高柱子)−height[i]` ，如果结果小于 `0`（即当前柱子高于两侧最高值），则该位置接不到雨水。
+
+**双指针方法**：
+
+- 使用两个指针 `left` 和 `right`，分别从数组的两端向中间移动。
+- 同时维护两个变量 `leftMax` 和 `rightMax`，分别记录左边和右边的最大高度。
+- 在每次移动时：
+  - 如果 `height[left] < height[right]`，处理左边的柱子：
+    - 更新 `leftMax = Math.max(leftMax, height[left])`。
+    - 当前位置能接的雨水量为 `leftMax - height[left]`（如果大于 0）。
+    - 然后 `left++`。
+  - 否则，处理右边的柱子：
+    - 更新 `rightMax = Math.max(rightMax, height[right])`。
+    - 当前位置能接的雨水量为 `rightMax - height[right]`（如果大于 0）。
+    - 然后 `right--`。
+- 累加所有位置的雨水量。
+
 ## Java代码：
 
 ```java
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length < 3) {
+            return 0; // 数组长度小于 3，无法接雨水
+        }
+
+        int water = 0; // 总雨水量
+        int left = 0; // 左指针
+        int right = height.length - 1; // 右指针
+        int leftMax = 0; // 左边最大高度
+        int rightMax = 0; // 右边最大高度
+
+        // 当左指针小于右指针时，继续循环
+        while (left < right) {
+            // 比较左右两侧高度，处理较矮的一侧
+            if (height[left] < height[right]) {
+                // 更新左边最大高度
+                leftMax = Math.max(leftMax, height[left]);
+                // 当前位置能接的雨水量
+                water += leftMax - height[left];
+                // 左指针右移
+                left++;
+            } else {
+                // 更新右边最大高度
+                rightMax = Math.max(rightMax, height[right]);
+                // 当前位置能接的雨水量
+                water += rightMax - height[right];
+                // 右指针左移
+                right--;
+            }
+        }
+
+        return water;
+    }
+}
 ```
 
