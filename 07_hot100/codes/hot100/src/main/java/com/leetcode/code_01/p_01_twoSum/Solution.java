@@ -4,6 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+    // 暴力解法
+//    public int[] twoSum(int[] nums, int target) {
+//        for (int i = 0; i < nums.length - 1; i++) {
+//            for (int j = i + 1; j < nums.length; j++) {
+//                if (nums[i] + nums[j] == target) {
+//                    return new int[] { i, j };
+//                }
+//            }
+//        }
+//        return new int[] {};
+//    }
+
+    // 哈希表解法
     public int[] twoSum(int[] nums, int target) {
         // 创建哈希表，存储数字和索引
         Map<Integer, Integer> map = new HashMap<>();

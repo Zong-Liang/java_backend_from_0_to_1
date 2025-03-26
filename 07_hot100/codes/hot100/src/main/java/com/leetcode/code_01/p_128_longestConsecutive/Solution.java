@@ -19,7 +19,7 @@ public class Solution {
         int maxLength = 0; // 最长连续序列的长度
         
         // 遍历数组
-        for (int num : nums) {
+        for (int num : set) {
             // 只有当 num 是连续序列的起点时才计算
             if (!set.contains(num - 1)) {
                 int currentNum = num;

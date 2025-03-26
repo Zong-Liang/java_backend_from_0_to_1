@@ -1,5 +1,7 @@
 # [1_两数之和](https://leetcode.cn/problems/two-sum/)
 
+难度：简单
+
 ## 问题描述：
 
 给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出 **和为目标值** *`target`* 的那 **两个** 整数，并返回它们的数组下标。
@@ -64,8 +66,8 @@ class Solution {
             map.put(nums[i], i);
         }
         
-        // 根据题目假设，应该总是有解的，但为了完整性添加以下返回
-        throw new IllegalArgumentException("No solution found");
+        // 题目保证有解，这里不会执行到
+        return new int[] {};
     }
 }
 ```
