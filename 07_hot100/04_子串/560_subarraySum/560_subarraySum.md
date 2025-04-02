@@ -12,51 +12,73 @@
 
 **示例 1：**
 
-```
+```java
 输入：nums = [1,1,1], k = 2
 输出：2
 ```
 
 **示例 2：**
 
-```
+```java
 输入：nums = [1,2,3], k = 3
 输出：2
 ```
 
 ## 解题思路：
 
+**问题转化**：
+
+- 我们需要找到所有满足条件的子数组 `[i, j]`，使得 `nums[i] + nums[i+1] + ... + nums[j] = k`。
+- 直接暴力枚举所有子数组的时间复杂度是 $O(n^2)$，对于较大的数组会超时。
+
+**前缀和思想**：
+
+- 定义前缀和 `prefixSum[i]` 表示从数组开头到索引 `i` 的元素和，即 `prefixSum[i] = nums[0] + nums[1] + ... + nums[i]`。
+- 子数组 `[i, j]` 的和可以表示为： `sum(i,j) = prefixSum[j] − prefixSum[i−1]`。
+- 我们需要找到 `prefixSum[j] − k = prefixSum[i−1]`。
+
+**哈希表优化**：
+
+- 遍历数组，边计算前缀和边用哈希表记录每个前缀和出现的次数。
+- 假设当前遍历到索引 `j`，当前前缀和为 `prefixSum[j]`，我们需要找到之前的前缀和 `prefixSum[i-1]`，使得 `prefixSum[j] - k = prefixSum[i-1]`。
+- 用哈希表 `map` 存储前缀和及其出现次数，键是前缀和，值是该前缀和出现的次数。
+- 每次计算当前前缀和 `prefixSum[j]` 时，查找 `map` 中是否存在 `prefixSum[j] - k`，如果存在，说明有 `map.get(prefixSum[j] - k)` 个子数组满足条件。
+
+**边界处理**：
+
+- 初始化哈希表时，放入 `(0, 1)`，表示前缀和为 `0` 的情况（即从数组开头到某个位置的和直接等于 `k` 的情况）。
+- 遍历数组时，累加前缀和，并更新哈希表。
+
+**复杂度**：
+
+- 时间复杂度：$O(n)$，其中 $n$ 是数组长度。
+- 空间复杂度：$O(n)$，用于存储哈希表。
+
 ## Java代码：
 
 ```java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
-        // 边界条件检查
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
+        // 哈希表，键是前缀和，值是该前缀和出现的次数
+        Map<Integer, Integer> map = new HashMap<>();
+        // 初始化：前缀和为 0 的情况出现 1 次
+        map.put(0, 1);
         
-        int count = 0;
-        int sum = 0;
+        int prefixSum = 0; // 当前前缀和
+        int count = 0;     // 满足条件的子数组个数
         
-        // 哈希表：key为前缀和，value为该前缀和出现的次数
-        HashMap<Integer, Integer> prefixSumCount = new HashMap<>();
-        
-        // 初始化：前缀和为0出现了1次（空子数组）
-        prefixSumCount.put(0, 1);
-        
+        // 遍历数组
         for (int num : nums) {
-            // 累加当前前缀和
-            sum += num;
+            // 累加前缀和
+            prefixSum += num;
             
-            // 检查是否存在前缀和为(sum-k)的子数组
-            // 如果存在，说明从该子数组之后到当前位置的子数组和为k
-            if (prefixSumCount.containsKey(sum - k)) {
-                count += prefixSumCount.get(sum - k);
+            // 如果存在 prefixSum - k，说明有子数组和为 k
+            if (map.containsKey(prefixSum - k)) {
+                count += map.get(prefixSum - k);
             }
             
-            // 更新哈希表，增加当前前缀和的计数
-            prefixSumCount.put(sum, prefixSumCount.getOrDefault(sum, 0) + 1);
+            // 更新哈希表，记录当前前缀和的出现次数
+            map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
         }
         
         return count;

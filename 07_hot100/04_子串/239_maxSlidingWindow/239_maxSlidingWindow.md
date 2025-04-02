@@ -12,7 +12,7 @@
 
 **示例 1：**
 
-```
+```java
 输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
 输出：[3,3,5,5,6,7]
 解释：
@@ -28,14 +28,41 @@
 
 **示例 2：**
 
-```
+```java
 输入：nums = [1], k = 1
 输出：[1]
 ```
 
 ## 解题思路：
 
+**问题转化**：
 
+- 我们需要维护一个大小为 `k` 的滑动窗口，窗口每次向右滑动一步。
+- 在每个窗口位置，找到窗口内的最大值。
+- 直接暴力解法是每次遍历窗口内的 `k` 个元素，时间复杂度为 $O(n⋅k)$，效率较低。
+
+**单调队列（Deque）解法**：
+
+- 使用一个双端队列（`Deque`）来维护窗口内的元素，保持队列中的元素单调递减。
+- 队列中存储的是数组元素的**索引**，而不是值本身。
+- 队列的头部始终是当前窗口的最大值的索引。
+- 具体步骤：
+  - 遍历数组，对于每个元素 `nums[i]`：
+    1. **移除不在窗口内的元素**：如果队列头部的索引已经不在当前窗口内（即 `i - queue.peekFirst() >= k`），移除队列头部。
+    2. **维护单调性**：从队列尾部开始，移除所有小于 `nums[i]` 的元素（因为这些元素不可能成为最大值）。
+    3. **加入当前元素**：将当前元素的索引 `i` 加入队列尾部。
+    4. **记录最大值**：当 `i >= k - 1` 时，窗口已经形成，队列头部的元素就是当前窗口的最大值，记录到结果数组中。
+
+**复杂度**：
+
+- 时间复杂度：$O(n)$，每个元素最多被加入和移除队列一次。
+- 空间复杂度：$O(k)$，队列最多存储 $k$ 个元素。
+
+**为什么用单调队列？**
+
+- 单调队列保证了队列中的元素是递减的，头部始终是最大值。
+- 当新元素加入时，移除所有比它小的元素，因为这些元素在未来的窗口中不可能成为最大值。
+- 当窗口滑动时，移除不在窗口内的元素，确保队列只包含当前窗口的元素。
 
 ## Java代码：
 
@@ -47,35 +74,28 @@ public class Solution {
         }
         
         int n = nums.length;
-        int[] result = new int[n - k + 1];
-        Deque<Integer> deque = new LinkedList<>(); // 存储下标
+        int[] result = new int[n - k + 1]; // 结果数组的长度
+        Deque<Integer> deque = new ArrayDeque<>(); // 单调队列，存储索引
         
-        // 处理第一个窗口
-        for (int i = 0; i < k; i++) {
-            // 移除所有小于当前元素的值
-            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
-                deque.pollLast();
-            }
-            deque.offerLast(i);
-        }
-        
-        // 记录第一个窗口的最大值
-        result[0] = nums[deque.peekFirst()];
-        
-        // 处理后续窗口
-        for (int i = k; i < n; i++) {
-            // 移除超出窗口范围的元素
-            if (!deque.isEmpty() && deque.peekFirst() <= i - k) {
+        // 遍历数组
+        for (int i = 0; i < n; i++) {
+            // 1. 移除不在窗口内的元素
+            while (!deque.isEmpty() && i - deque.peekFirst() >= k) {
                 deque.pollFirst();
             }
             
-            // 移除所有小于当前元素的值
+            // 2. 维护单调递减队列，移除尾部小于当前元素的值
             while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
                 deque.pollLast();
             }
             
+            // 3. 将当前元素的索引加入队列
             deque.offerLast(i);
-            result[i - k + 1] = nums[deque.peekFirst()];
+            
+            // 4. 当窗口形成时，记录最大值
+            if (i >= k - 1) {
+                result[i - k + 1] = nums[deque.peekFirst()];
+            }
         }
         
         return result;

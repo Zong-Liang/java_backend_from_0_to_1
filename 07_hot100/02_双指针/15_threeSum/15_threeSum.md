@@ -72,10 +72,6 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 ## Java代码：
 
 ```java
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();

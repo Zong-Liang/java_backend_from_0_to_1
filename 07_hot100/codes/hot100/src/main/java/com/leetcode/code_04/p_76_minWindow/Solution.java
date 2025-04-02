@@ -1,72 +1,5 @@
-# [76_最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)
+package com.leetcode.code_04.p_76_minWindow;
 
-难度：困难
-
-# 问题描述：
-
-给你一个字符串 `s` 、一个字符串 `t` 。返回 `s` 中涵盖 `t` 所有字符的最小子串。如果 `s` 中不存在涵盖 `t` 所有字符的子串，则返回空字符串 `""` 。
-
- 
-
-**注意：**
-
-- 对于 `t` 中重复字符，我们寻找的子字符串中该字符数量必须不少于 `t` 中该字符数量。
-- 如果 `s` 中存在这样的子串，我们保证它是唯一的答案。
-
- 
-
-**示例 1：**
-
-```java
-输入：s = "ADOBECODEBANC", t = "ABC"
-输出："BANC"
-解释：最小覆盖子串 "BANC" 包含来自字符串 t 的 'A'、'B' 和 'C'。
-```
-
-**示例 2：**
-
-```java
-输入：s = "a", t = "a"
-输出："a"
-解释：整个字符串 s 是最小覆盖子串。
-```
-
-**示例 3:**
-
-```java
-输入: s = "a", t = "aa"
-输出: ""
-解释: t 中两个字符 'a' 均应包含在 s 的子串中，
-因此没有符合条件的子字符串，返回空字符串。
-```
-
-# 解题思路：
-
-**初始化**：
-
-- 创建两个频率数组，一个存储目标字符串t中字符的频率，另一个存储当前窗口中字符的频率
-- 统计t中不同字符的数量（required变量）
-
-**滑动窗口**：
-
-- 右指针不断向右扩展窗口，将字符加入当前窗口
-- 当窗口中某个字符的频率等于t中该字符的频率时，匹配计数加1
-- 当匹配计数等于required时，说明当前窗口包含了t中所有字符
-
-**优化窗口**：
-
-- 当找到一个可行解后，尝试通过移动左指针来缩小窗口
-- 如果移除的字符导致窗口不再满足条件，则停止缩小窗口
-- 在缩小过程中更新最小窗口的位置和长度
-
-**结果输出**：
-
-- 如果找到了符合条件的窗口，返回对应的子串
-- 否则返回空字符串
-
-# Java代码：
-
-```java
 class Solution {
     public String minWindow(String s, String t) {
         // 处理边界情况
@@ -135,6 +68,26 @@ class Solution {
 
         return minStart == -1 ? "" : s.substring(minStart, minStart + minLen);
     }
-}
-```
+    // 测试代码
+    public static void main(String[] args) {
+        Solution solution = new Solution();
 
+        // 测试用例1
+        String s1 = "ADOBECODEBANC";
+        String t1 = "ABC";
+        System.out.println("输入: s = \"" + s1 + "\", t = \"" + t1 + "\"");
+        System.out.println("输出: \"" + solution.minWindow(s1, t1) + "\"");
+
+        // 测试用例2
+        String s2 = "a";
+        String t2 = "a";
+        System.out.println("\n输入: s = \"" + s2 + "\", t = \"" + t2 + "\"");
+        System.out.println("输出: \"" + solution.minWindow(s2, t2) + "\"");
+
+        // 测试用例3
+        String s3 = "a";
+        String t3 = "aa";
+        System.out.println("\n输入: s = \"" + s3 + "\", t = \"" + t3 + "\"");
+        System.out.println("输出: \"" + solution.minWindow(s3, t3) + "\"");
+    }
+}

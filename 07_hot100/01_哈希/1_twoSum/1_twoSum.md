@@ -43,9 +43,6 @@
 ## Java代码：
 
 ```java
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         // 创建哈希表，用于存储数组元素的值和索引
