@@ -5,9 +5,9 @@ public class Solution {
     public void sortColors(int[] nums) {
         int left = 0;
         int current = 0;
-        int high = nums.length - 1;
+        int rigth = nums.length - 1;
 
-        while (current <= high) {
+        while (current <= rigth) {
             if (nums[current] == 0) {
                 swap(nums, left, current);
                 left++;
@@ -15,8 +15,8 @@ public class Solution {
             } else if (nums[current] == 1) {
                 current++;
             } else {
-                swap(nums, current, high);
-                high--;
+                swap(nums, current, rigth);
+                rigth--;
             }
         }
     }
